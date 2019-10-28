@@ -5,29 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".RegisterActivity">
+    android:orientation="vertical"
+    tools:context=".Loginpage">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center|top">
+        android:gravity="center|top"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="200dp"
+        android:background="@drawable/linearlayoutstyling">
 
         <ImageView
             android:layout_width="80pt"
             android:layout_height="80pt"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo_black"
+            />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/edittextbg"
+            android:background="@drawable/edittextbgstroked"
             android:hint="Username"
             android:padding="5dp"
             tools:layout_marginTop="20dp"
+
             android:textAlignment="center"/>
 
         <EditText
@@ -37,28 +45,32 @@
             android:layout_marginTop="25dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/edittextbg"
+            android:background="@drawable/edittextbgstroked"
+
             android:hint="Password"
-            android:textAlignment="center"
-            android:padding="5dp" />
+            android:padding="5dp"
+            android:textAlignment="center" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/button_bg"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_bggradient"
             android:padding="10dp"
-            android:text="Register"
+            android:text="Login"
+            android:elevation="2dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#7358DF"
-            android:textStyle="bold" />
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            style="?android:attr/borderlessButtonStyle"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="249dp"
-            android:layout_marginTop="80dp"
-            android:src="@drawable/login1" />
 
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="242dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="-190dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/intro" />
 </android.support.v7.widget.LinearLayoutCompat>

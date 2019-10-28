@@ -10,37 +10,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center|top">
+    android:gravity="center|top"
+    >
 
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="80pt"
         android:layout_height="80pt"
-        android:layout_marginTop="60dp"
-android:layout_marginBottom="20dp"
-        android:src="@drawable/logo" />
+        android:layout_marginTop="50dp"
+android:layout_marginBottom="30dp"
+        android:src="@drawable/logo"
+        android:transitionName="zoomout"/>
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="36dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/edittextbg"
-        android:hint="Username"
+        android:hint="    Username"
+        android:drawableLeft="@drawable/u"
         android:padding="5dp"
         tools:layout_marginTop="20dp"
-        android:textAlignment="center"/>
+        android:elevation="2dp"
+       />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="36dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="25dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/edittextbg"
-        android:hint="Password"
-        android:textAlignment="center"
-        android:padding="5dp" />
+        android:drawableLeft="@drawable/k"
+        android:elevation="2dp"
+        android:hint="    Password"
+        android:padding="5dp"
+
+       />
 
     <Button
         android:layout_width="wrap_content"
@@ -49,14 +57,16 @@ android:layout_marginBottom="20dp"
         android:background="@drawable/button_bg"
         android:padding="10dp"
         android:text="Login"
+        android:elevation="2dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#7358DF"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        style="?android:attr/borderlessButtonStyle"/>
 
     <ImageView
         android:layout_width="242dp"
         android:layout_height="180dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/intro" />
 
 </LinearLayout>
