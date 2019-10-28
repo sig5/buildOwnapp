@@ -92,11 +92,10 @@ public class FullscreenActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-               //startActivity(new Intent(this,));
+               startActivity(new Intent(getApplicationContext(),Loginpage.class));
             }
         },10000);
         setContentView(R.layout.activity_fullscreen);
-
         mVisible = true;
         //mControlsView = findViewById(R.id.fullscreen_content_controls);
       //  mContentView = findViewById(R.id.fullscreen_content);
