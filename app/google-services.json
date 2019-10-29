@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "208428127621",
+    "firebase_url": "https://buyowned.firebaseio.com",
+    "project_id": "buyowned",
+    "storage_bucket": "buyowned.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208428127621:android:3f1aaf0ed1facdcf67a0ec",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208428127621-vj0bb2s2183jaeie7052k7p00d1hh7ea.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "37e39a8e2e6a343918685fb07d7c204cf4d67abc"
+          }
+        },
+        {
+          "client_id": "208428127621-2pvk99fn6om3r8mohjls5tme97cst937.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhzU4HXsUxfmZ_fHmH8d2YJkQM53BOeT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208428127621-2pvk99fn6om3r8mohjls5tme97cst937.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
