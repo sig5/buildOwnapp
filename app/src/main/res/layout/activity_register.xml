@@ -26,6 +26,8 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/edittextbg"
             android:hint="Username"
+            android:drawableLeft="@drawable/u"
+            android:id="@+id/username"
             android:padding="5dp"
             tools:layout_marginTop="20dp"
             android:textAlignment="center"/>
@@ -39,6 +41,8 @@
             android:layout_marginBottom="15dp"
             android:background="@drawable/edittextbg"
             android:hint="Password"
+            android:id="@+id/password"
+            android:drawableLeft="@drawable/k"
             android:textAlignment="center"
             android:padding="5dp" />
 
@@ -51,7 +55,9 @@
             android:text="Register"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="#7358DF"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:id="@+id/Register"
+            />
 
         <ImageView
             android:layout_width="wrap_content"
