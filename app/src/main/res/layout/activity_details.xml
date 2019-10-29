@@ -151,11 +151,12 @@
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:layout_gravity="center|center_horizontal|left|center_vertical"
+            android:orientation="horizontal">
 
             <Button
                 android:layout_width="150sp"
