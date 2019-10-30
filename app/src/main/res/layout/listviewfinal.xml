@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">:borderWidth="0sp"
+    app:srcCompat="@drawable/outline_arrow_forward_white_48dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="72sp"
+            android:layout_height="72sp"
+            android:background="@null"
+            android:backgroundTint="@null"
+            android:backgroundTintMode="screen"
+            android:drawableStart="@drawable/baseline_menu_black_48dp"
+            android:elevation="0sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="72sp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:src="@drawable/logo_black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:gravity="right"/>
+    </LinearLayout>
+
+</android.support.v7.widget.LinearLayoutCompat>
