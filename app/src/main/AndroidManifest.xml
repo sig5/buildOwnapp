@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Details"
+        <activity android:name=".Listview"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
+
+        </activity>
+        <activity
+            android:name=".Details"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,11 +28,13 @@
             android:name=".SplashScreen"
             android:theme="@style/Theme.AppCompat.NoActionBar">
 
+
         </activity>
         <activity
             android:name=".RegisterActivity"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".Loginpage"
             android:theme="@style/Theme.AppCompat.NoActionBar" />

@@ -30,7 +30,6 @@ ImageView img;
             public void run() {
                 ActivityOptionsCompat activityOptionsCompat = (ActivityOptionsCompat) ActivityOptionsCompat.makeSceneTransitionAnimation(SplashScreen.this,(View)img,"zoomout");
                 startActivity(new Intent(getApplicationContext(),Loginpage.class),activityOptionsCompat.toBundle());
-                finish();
             }
         },5000);
 
