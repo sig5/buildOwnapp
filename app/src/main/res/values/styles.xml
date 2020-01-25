@@ -8,9 +8,37 @@
         <item name="colorAccent">@color/colorAccent</item>
 
     </style>
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary2</item>
+        <item name="colorPrimaryDark">@color/colorPrimary2</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+    <style name="AppThemewhitestatus" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary2</item>
+        <item name="colorPrimaryDark">#ffffff</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="popupMenuStyle">@style/pop</item>
+
+    </style>
+    <style name="pop" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">#ffffff</item>
+        <item name="android:dropDownHorizontalOffset">8dp</item>
+        <item name="android:dropDownVerticalOffset">-8dp</item>
+    </style>
+
+        <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+            <item name="android:progressDrawable">@drawable/hamburger512</item>
+            <item name="android:minHeight">23dip</item>
+            <item name="android:maxHeight">25dip</item>
+        </style>
+
 
     <style name="FullscreenTheme" parent="AppTheme">
         <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:statusBarColor">#764ba2</item>
         <item name="android:windowActionBarOverlay">true</item>
         <item name="android:windowBackground">@null</item>
         <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
@@ -22,7 +50,8 @@
     </style>
 
     <style name="AppTheme.NoActionBar">
-
+        <item name="android:popupMenuStyle">@android:color/white</item>
+        <item name="android:statusBarColor">#764ba2</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

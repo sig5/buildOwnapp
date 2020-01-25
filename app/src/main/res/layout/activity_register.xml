@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@drawable/gradient2"
     tools:context=".RegisterActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,19 +20,21 @@
             android:src="@drawable/logo" />
 
         <EditText
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/edittextbg"
-            android:hint="Username"
             android:drawableLeft="@drawable/u"
-            android:id="@+id/username"
+            android:drawablePadding="12sp"
+            android:hint="Username"
             android:padding="5dp"
-            tools:layout_marginTop="20dp"
-            android:textAlignment="center"/>
+            android:textAlignment="inherit"
+            tools:layout_marginTop="20dp" />
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_marginLeft="20dp"
@@ -40,11 +42,12 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/edittextbg"
-            android:hint="Password"
-            android:id="@+id/password"
             android:drawableLeft="@drawable/k"
-            android:textAlignment="center"
-            android:padding="5dp" />
+            android:drawablePadding="12sp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="5dp"
+            android:textAlignment="inherit" />
 
         <Button
             android:layout_width="wrap_content"
@@ -60,6 +63,7 @@
             />
 
         <ImageView
+            android:id="@+id/gotologin"
             android:layout_width="wrap_content"
             android:layout_height="249dp"
             android:layout_marginTop="80dp"

@@ -48,7 +48,7 @@ public class Loginpage extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful())
-                        {
+                        { Toast.makeText(getApplicationContext(),"hehe",Toast.LENGTH_SHORT);
                             startActivity(new Intent(getApplicationContext(),Listview.class));
                             finish();
                         }

@@ -8,6 +8,10 @@ public class Itemdetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_itemdetails);
+        setContentView(R.layout.detail2ndpage);
+        int p=0;
+        p=getIntent().getIntExtra("position",0);
+
+
     }
 }

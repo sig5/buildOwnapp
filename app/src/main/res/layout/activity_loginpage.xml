@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@drawable/gradient2"
     tools:context=".Loginpage">
 
     <LinearLayout
@@ -29,9 +29,10 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/edittextbg"
-            android:drawableLeft="@drawable/u"
+            android:drawableStart="@drawable/u"
+            android:drawablePadding="12sp"
             android:elevation="2dp"
-            android:hint="    Username"
+            android:hint="Username"
             android:padding="5dp"
             android:textColor="#000000"
             tools:layout_marginTop="20dp" />
@@ -45,10 +46,12 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/edittextbg"
-            android:drawableLeft="@drawable/k"
+            android:drawableStart="@drawable/k"
+            android:drawablePadding="12sp"
             android:elevation="2dp"
-            android:hint="    Password"
 
+            android:hint="Password"
+            android:inputType="textPassword"
             android:padding="5dp"
             android:textColor="#424764" />
 
