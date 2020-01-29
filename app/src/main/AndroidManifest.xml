@@ -14,6 +14,8 @@
         <activity android:name=".Listview"
             android:theme="@style/AppThemewhitestatus">
 
+
+
         </activity>
         <activity
             android:name=".Details"
@@ -31,11 +33,6 @@
             android:name=".SplashScreen"
             android:theme="@style/AppTheme2">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity
