@@ -34,7 +34,7 @@
             android:elevation="2dp"
             android:hint="Username"
             android:padding="5dp"
-            android:textColor="#000000"
+            android:textColor="#424764"
             tools:layout_marginTop="20dp" />
 
         <EditText

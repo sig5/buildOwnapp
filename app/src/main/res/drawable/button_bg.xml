@@ -7,6 +7,5 @@
 <solid android:color="#ffffff"></solid>
         </shape>
     </item>
-    <item android:name="android:textAllCaps">false</item>
 
 </selector>
