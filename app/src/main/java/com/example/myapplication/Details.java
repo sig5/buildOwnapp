@@ -25,8 +25,14 @@ public class Details extends AppCompatActivity {
         bookauthor.setText(MyData.authorname.get(p));
         bookprice.setText(MyData.price.get(p));
         bookdescription.setText(MyData.description.get(p));
+
         byte[] decode= Base64.decode(MyData.image.get(p),Base64.DEFAULT);
+
         Bitmap decoded= BitmapFactory.decodeByteArray(decode,0,decode.length);
+        if(decoded!=null)
         frontcover.setImageBitmap(decoded);
+        else {
+           frontcover.setImageDrawable(getDrawable(R.drawable.pic2));
+        }
     }
 }
