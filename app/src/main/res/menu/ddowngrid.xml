@@ -4,7 +4,8 @@
     >
     <item
         app:showAsAction="collapseActionView"
-        android:title="item1"></item>
+        android:title="Log Out"
+        android:id="@+id/logout"></item>
 <item
     app:showAsAction="collapseActionView"
     android:title="item1\"></item>
