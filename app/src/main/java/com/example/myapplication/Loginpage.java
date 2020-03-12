@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Loginpage extends AppCompatActivity {
     FirebaseAuth mAuth;
@@ -24,6 +25,14 @@ public class Loginpage extends AppCompatActivity {
     Button signin;
     ImageView gotoregister;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser firebaseUser=mAuth.getCurrentUser();
+        if(firebaseUser!=null)
+        {
+            startActivity(new Intent(getApplicationContext(),Listview.class));
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
