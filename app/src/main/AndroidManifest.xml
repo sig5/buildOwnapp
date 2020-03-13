@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE">
 
+    </uses-permission>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -11,38 +15,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Listview"
-            android:theme="@style/AppTheme2">
+        <activity android:name=".add_new_value"
+            android:theme="@style/AppTheme2"> <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-
-
-        </activity>
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
+        <activity
+            android:name=".Listview"
+            android:theme="@style/AppTheme2"></activity>
         <activity
             android:name=".Details"
-            android:theme="@style/AppThemewhitestatus">
-
-
-
-        </activity>
-        <activity android:name=".Itemdetails"
-            android:theme="@style/AppThemewhitestatus">
-
-        </activity >
-
+            android:theme="@style/AppThemewhitestatus"></activity>
+        <activity
+            android:name=".Itemdetails"
+            android:theme="@style/AppThemewhitestatus"></activity>
         <activity
             android:name=".SplashScreen"
             android:theme="@style/AppTheme2">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".RegisterActivity"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme2" />
-
         <activity
             android:name=".Loginpage"
             android:theme="@style/AppTheme2" />
