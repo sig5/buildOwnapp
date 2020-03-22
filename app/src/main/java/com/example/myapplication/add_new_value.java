@@ -8,20 +8,30 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
+
+import static android.provider.MediaStore.Images.Media.getBitmap;
 
 @SuppressWarnings("ALL")
 public class add_new_value extends AppCompatActivity {
     String filestr;
     String path;
+    String front;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +46,11 @@ public class add_new_value extends AppCompatActivity {
 
 
 
-        String bookname=editText.getText().toString();
-        String authorname=editText1.getText().toString();
-        String price=editText2.getText().toString();
+        final String bookname=editText.getText().toString();
+        final String authorname=editText1.getText().toString();
+        final String price=editText2.getText().toString();
+
+
 
 
 
@@ -47,52 +59,102 @@ public class add_new_value extends AppCompatActivity {
             @Override
             public void onClick(View v) {
               image_picker();
+              front=image_picker();
             }
         });
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                upload(bookname,authorname,price,"",front);
+
             }
         });
 
     }
-    void image_picker()
+    String image_picker()
     {
         Intent intent=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
         startActivityForResult(intent,1);
-
+        Bitmap bitmap;
         if(path!=null)
         {ImageView imageView1=findViewById(R.id.thumbadd);
-            Bitmap bitmap= BitmapFactory.decodeFile(path);
+            bitmap= BitmapFactory.decodeFile(path);
             imageView1.setImageBitmap(bitmap);
+
         }
         else
         {
             ImageView imageView1=findViewById(R.id.thumbadd);
-            Bitmap bitmap= BitmapFactory.decodeFile(filestr);
+           bitmap= BitmapFactory.decodeFile(filestr);
             imageView1.setImageBitmap(bitmap);
         }
+        return "";
+
     }
-    void upload(final String a)
+    void upload(String bookname,String authorname,String price,String decription,String front)
     {
-            class upload_data extends AsyncTask<Void,Void,String>{
+            class Upload_data extends AsyncTask<Void,Void,String>{
+                EditText editText=findViewById(R.id.bookaddname);
+                EditText editText1=findViewById(R.id.authornameadd);
+                EditText editText2=findViewById(R.id.addprice);
+                Button button=findViewById(R.id.thumbnail);
+                Button button1=findViewById(R.id.submit);
+
+
+
+                String bookname=editText.getText().toString();
+                String authorname=editText1.getText().toString();
+                String price=editText2.getText().toString();
+
+                @Override
+                protected void onPreExecute() {
+                    super.onPreExecute();
+                    System.out.println("started");
+                }
+
+                @Override
+                protected void onPostExecute(String s) {
+                    super.onPostExecute(s);
+                    System.out.println("donebruh");
+                }
 
                 @Override
                 protected String doInBackground(Void... voids) {
                     try {
-                        URL url=new URL(a);
-                        HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
+                        String data= URLEncoder.encode("bookname","UTF-8")+"=\""+URLEncoder.encode(bookname,"UTF-8");
+                        data+="\"&"+URLEncoder.encode("authorname","UTF-8")+"=\""+URLEncoder.encode(authorname,"UTF-8");
+                        data+="\"&"+URLEncoder.encode("price","UTF-8")+"=\""+URLEncoder.encode(price,"UTF-8")+"\"";
+                        URL url=new URL("https://buyowned.000webhostapp.com/scrpt.php");
+                        HttpURLConnection urlConnection= (HttpURLConnection) url.openConnection();
+                        urlConnection.setDoOutput(true);
+                        urlConnection.setDoInput(true);
 
+                        urlConnection.setRequestMethod("POST");
+                        OutputStreamWriter outputStreamWriter=new OutputStreamWriter(urlConnection.getOutputStream());
+                        System.out.println(data);
+                        outputStreamWriter.write(data);outputStreamWriter.close();
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                        String s=new String();
+                        while((s=reader.readLine())!=null)
+                        {
+                            System.out.println(s);
+                        }
+
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+
+
                     return null;
                 }
             }
-
+            Upload_data upload_data=new Upload_data();
+            upload_data.execute();
 
 
     }
@@ -106,6 +168,16 @@ public class add_new_value extends AppCompatActivity {
             imageView.setImageURI(imageUri);
             else
                 imageView=findViewById(R.drawable.pic2);
+            ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
+            Bitmap bitmap= null;
+            try {
+                bitmap = getBitmap(getContentResolver(),data.getData());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            bitmap.compress(Bitmap.CompressFormat.PNG,30,byteArrayOutputStream);
+            byte[] b=byteArrayOutputStream.toByteArray();
+            String encodedimage= Base64.encodeToString(b,Base64.DEFAULT);
         }
     }}
 
