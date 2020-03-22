@@ -3,7 +3,7 @@
     <item>
     <shape>
         <corners android:radius="15dp"></corners>
-        <solid android:color="#454777"></solid>
+        <solid android:color="#7660AE"></solid>
     </shape>
     </item>
 </selector>

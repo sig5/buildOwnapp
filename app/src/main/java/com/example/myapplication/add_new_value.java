@@ -59,7 +59,6 @@ public class add_new_value extends AppCompatActivity {
             @Override
             public void onClick(View v) {
               image_picker();
-              front=image_picker();
             }
         });
         button1.setOnClickListener(new View.OnClickListener() {
@@ -92,12 +91,13 @@ public class add_new_value extends AppCompatActivity {
         return "";
 
     }
-    void upload(String bookname,String authorname,String price,String decription,String front)
+    void upload(String bookname, String authorname, String price, String description, final String front1)
     {
             class Upload_data extends AsyncTask<Void,Void,String>{
                 EditText editText=findViewById(R.id.bookaddname);
                 EditText editText1=findViewById(R.id.authornameadd);
                 EditText editText2=findViewById(R.id.addprice);
+                EditText editText3=findViewById(R.id.description);
                 Button button=findViewById(R.id.thumbnail);
                 Button button1=findViewById(R.id.submit);
 
@@ -106,6 +106,8 @@ public class add_new_value extends AppCompatActivity {
                 String bookname=editText.getText().toString();
                 String authorname=editText1.getText().toString();
                 String price=editText2.getText().toString();
+                String description=editText3.getText().toString();
+
 
                 @Override
                 protected void onPreExecute() {
@@ -124,12 +126,11 @@ public class add_new_value extends AppCompatActivity {
                     try {
                         String data= URLEncoder.encode("bookname","UTF-8")+"=\""+URLEncoder.encode(bookname,"UTF-8");
                         data+="\"&"+URLEncoder.encode("authorname","UTF-8")+"=\""+URLEncoder.encode(authorname,"UTF-8");
-                        data+="\"&"+URLEncoder.encode("price","UTF-8")+"=\""+URLEncoder.encode(price,"UTF-8")+"\"";
+                        data+="\"&"+URLEncoder.encode("price","UTF-8")+"=\""+URLEncoder.encode(price,"UTF-8")+"\"&"+URLEncoder.encode("description","UTF-8")+"=\""+URLEncoder.encode(description,"UTF-8")+"\"&"+URLEncoder.encode("front","UTF-8")+"="+URLEncoder.encode(front,"UTF-8");
                         URL url=new URL("https://buyowned.000webhostapp.com/scrpt.php");
                         HttpURLConnection urlConnection= (HttpURLConnection) url.openConnection();
                         urlConnection.setDoOutput(true);
                         urlConnection.setDoInput(true);
-
                         urlConnection.setRequestMethod("POST");
                         OutputStreamWriter outputStreamWriter=new OutputStreamWriter(urlConnection.getOutputStream());
                         System.out.println(data);
@@ -177,7 +178,8 @@ public class add_new_value extends AppCompatActivity {
             }
             bitmap.compress(Bitmap.CompressFormat.PNG,30,byteArrayOutputStream);
             byte[] b=byteArrayOutputStream.toByteArray();
-            String encodedimage= Base64.encodeToString(b,Base64.DEFAULT);
+            front= Base64.encodeToString(b,Base64.DEFAULT);
+
         }
     }}
 
