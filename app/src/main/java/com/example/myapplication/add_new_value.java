@@ -12,6 +12,7 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.io.BufferedReader;
@@ -43,6 +44,7 @@ public class add_new_value extends AppCompatActivity {
         EditText editText2=findViewById(R.id.addprice);
         Button button=findViewById(R.id.thumbnail);
         Button button1=findViewById(R.id.submit);
+        ImageButton imageButton=findViewById(R.id.imageButton2);
 
 
 
@@ -69,7 +71,12 @@ public class add_new_value extends AppCompatActivity {
 
             }
         });
-
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
     String image_picker()
     {

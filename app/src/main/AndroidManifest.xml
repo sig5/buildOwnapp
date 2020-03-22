@@ -16,12 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".add_new_value"
-            android:theme="@style/AppTheme2"> <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.DEFAULT" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+            android:theme="@style/AppTheme2"> </activity>
         <activity
             android:name=".Listview"
             android:theme="@style/AppTheme2"></activity>
@@ -34,6 +29,12 @@
         <activity
             android:name=".SplashScreen"
             android:theme="@style/AppTheme2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity
@@ -42,7 +43,7 @@
             android:theme="@style/AppTheme2" />
         <activity
             android:name=".Loginpage"
-            android:theme="@style/AppTheme2" />
+            android:theme="@style/AppTheme2"> </activity>
         <activity
             android:name=".FullscreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

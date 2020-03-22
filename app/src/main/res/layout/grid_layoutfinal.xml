@@ -22,21 +22,18 @@
             app:srcCompat="@drawable/logo" />
 
         <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="68sp"
-        android:layout_height="68sp"
-        android:layout_marginStart="319dp"
-        android:layout_marginTop="639dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:backgroundTint="#746ABA"
-        android:clickable="true"
-        android:focusable="auto"
-        app:borderWidth="0sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/floatingActionButton"
+            android:layout_width="68sp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#746ABA"
+            android:clickable="true"
+            android:focusable="auto"
+            android:src="@drawable/newbookicon"
+            app:borderWidth="0sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <ProgressBar
             android:id="@+id/progressBar"
