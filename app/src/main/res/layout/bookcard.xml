@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CardView.Light"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:outlineProvider="bounds"
+    app:cardBackgroundColor="#E6FFFFFF"
+    app:cardCornerRadius="10sp"
+    app:cardUseCompatPadding="true"
+    tools:layout_gravity="center"
+    app:cardElevation="0dp"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clipToPadding="false"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounder"
+            android:scaleType="fitXY"
+            android:src="@drawable/pic"
+            app:layout_constraintBottom_toTopOf="@+id/bookname"
+            app:layout_constraintDimensionRatio="H,4:5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/bookname"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="16sp"
+            android:text="The Picture of Dorian Gray"
+            android:textColor="#464545"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thumbnail" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:lineSpacingExtra="8sp"
+            android:padding="16sp"
+            android:text="\u20B9123 "
+            android:textColor="#636363"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bookname"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="8dp"
+            android:numStars="5"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/price"
+            app:layout_constraintTop_toBottomOf="@+id/bookname"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
+
